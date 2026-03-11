@@ -10,9 +10,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-displa
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://inova-laundry.id"),
-  title: "INOVA - Mitra Bisnis Laundry Terpercaya",
-  description: "Solusi bisnis laundry terpercaya. Paket usaha laundry lengkap dengan peralatan profesional, training, dan dukungan bisnis untuk kesuksesan usaha Anda.",
-  keywords: ["laundry", "bisnis laundry", "paket usaha laundry", "mesin laundry", "laundry express", "laundry shop", "usaha laundry"],
+  title: "INOVA - Mitra Bisnis Laundry Terpercaya | Paket Usaha Laundry Yogyakarta",
+  description: "Solusi bisnis laundry terpercaya di Yogyakarta. Paket usaha laundry lengkap dengan peralatan profesional, training, dan dukungan bisnis untuk kesuksesan usaha Anda.",
+  keywords: ["laundry", "bisnis laundry", "paket usaha laundry", "mesin laundry", "laundry yogyakarta", "usaha laundry yogyakarta", "paket laundry lengkap", "mesin cuci profesional", "laundry shop", "laundry express", "investasi laundry", "uang laundry", "bisnis laundry jogja"],
   generator: "INOVA",
   applicationName: "INOVA",
   creator: "INOVA",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     apple: "/LOGO_INOVA.png",
   },
   openGraph: {
-    title: "INOVA - Mitra Bisnis Laundry Terpercaya",
-    description: "Solusi bisnis laundry terpercaya dengan paket usaha lengkap.",
+    title: "INOVA - Mitra Bisnis Laundry Terpercaya Yogyakarta",
+    description: "Solusi bisnis laundry terpercaya dengan paket usaha lengkap di Yogyakarta. Mesin profesional dan dukungan bisnis.",
     url: "https://inova-laundry.id",
     siteName: "INOVA",
     type: "website",
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "INOVA - Mitra Bisnis Laundry Terpercaya",
-    description: "Solusi bisnis laundry terpercaya dengan paket usaha lengkap.",
+    title: "INOVA - Mitra Bisnis Laundry Terpercaya Yogyakarta",
+    description: "Solusi bisnis laundry terpercaya dengan paket usaha lengkap di Yogyakarta.",
     images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://inova-laundry.id",
     languages: {
-      "id-ID": "https://inova-laundry.id/id",
-      "en-US": "https://inova-laundry.id/en",
+      "id-ID": "https://inova-laundry.id",
+      "en-US": "https://inova-laundry.id?lang=en",
     },
   },
 };

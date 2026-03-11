@@ -5,13 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { translations } from "@/lib/i18n";
+import { WA_NAVBAR } from "@/lib/whatsapp";
 
 interface NavbarProps {
   locale: "id" | "en";
   onLocaleChange: (locale: "id" | "en") => void;
+  /** Prefix untuk semua anchor link. Default "/". Di halaman selain home, isi dengan "/" agar anchor mengarah ke halaman utama. */
+  basePath?: string;
 }
 
-export function Navbar({ locale, onLocaleChange }: NavbarProps) {
+export function Navbar({ locale, onLocaleChange, basePath = "" }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const t = translations[locale].common;
@@ -23,10 +26,10 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { label: locale === "id" ? "Beranda" : "Home", href: "#" },
-    { label: t.nav.packages, href: "#packages" },
-    { label: locale === "id" ? "Produk" : "Products", href: "#products" },
-    { label: locale === "id" ? "Tentang" : "About", href: "#why" },
+    { label: locale === "id" ? "Beranda" : "Home", href: basePath || "/" },
+    { label: t.nav.packages, href: `${basePath}#packages` },
+    { label: locale === "id" ? "Produk" : "Products", href: "/produk" },
+    { label: locale === "id" ? "Tentang" : "About", href: `${basePath}#why` },
   ];
 
   return (
@@ -47,9 +50,9 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link-hover text-sm font-semibold text-slate-600 hover:text-[#1e3a8a] transition-colors">
+              <Link key={link.href} href={link.href} className="nav-link-hover text-sm font-semibold text-slate-600 hover:text-[#1e3a8a] transition-colors">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -75,7 +78,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/6281234567890"
+              href={WA_NAVBAR}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white text-sm font-bold rounded-full transition-all duration-200 shadow-md shadow-green-500/25 hover:shadow-green-500/35 hover:scale-[1.03] active:scale-100"
@@ -85,7 +88,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             </a>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+            <button suppressHydrationWarning onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
@@ -97,9 +100,9 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
         <div className="md:hidden mt-2 mx-4 mb-4 rounded-2xl bg-white border border-slate-100 shadow-xl overflow-hidden">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="flex items-center px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#1e3a8a] transition-colors" onClick={() => setIsOpen(false)}>
+              <Link key={link.href} href={link.href} className="flex items-center px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#1e3a8a] transition-colors" onClick={() => setIsOpen(false)}>
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             <div className="pt-3 space-y-3 border-t border-slate-100 mt-3">
@@ -129,7 +132,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
                 </div>
               </div>
               <a
-                href="https://wa.me/6281234567890"
+                href={WA_NAVBAR}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 mx-4 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-sm transition-colors"

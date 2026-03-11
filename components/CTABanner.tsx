@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/lib/i18n";
+import { WA_CTA_BANNER } from "@/lib/whatsapp";
 
 interface CTABannerProps {
   locale: "id" | "en";
@@ -52,7 +53,7 @@ export function CTABanner({ locale }: CTABannerProps) {
 
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/6281234567890"
+              href={WA_CTA_BANNER}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-black text-sm rounded-2xl transition-all duration-200 shadow-xl shadow-green-500/30 hover:shadow-green-400/40 hover:scale-[1.03] active:scale-100"

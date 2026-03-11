@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Mail, MapPin, Phone, Instagram, Facebook, Youtube } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Phone, Instagram, Music2 } from "lucide-react";
 import { translations } from "@/lib/i18n";
+import { WA_FOOTER } from "@/lib/whatsapp";
 
 interface FooterProps {
   locale: "id" | "en";
@@ -37,9 +38,8 @@ export function Footer({ locale }: FooterProps) {
 
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: "#" },
-                { icon: Facebook, href: "#" },
-                { icon: Youtube, href: "#" },
+                { icon: Instagram, href: "https://www.instagram.com/inovalaundrysolution/" },
+                { icon: Music2, href: "https://www.tiktok.com/@inovalaundrysolution?_r=1&_t=ZS-93GzrDP0rll&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnFqdoanOV-lbXo06Y8gsmOri4MdSsy5Ay0xi6je0CkZHfHtJwLAz09qnyvuI_aem_qoMXJxHUbj645aiPAyFy_g" },
               ].map(({ icon: Icon, href }, i) => (
                 <a key={i} href={href} className="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
                   <Icon className="w-4 h-4" />
@@ -107,7 +107,7 @@ export function Footer({ locale }: FooterProps) {
             </ul>
 
             <a
-              href="https://wa.me/6281234567890"
+              href={WA_FOOTER}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 bg-green-500 hover:bg-green-400 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg shadow-green-500/20"

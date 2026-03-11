@@ -6,12 +6,6 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /wp-login/
-Disallow: /config/
-Disallow: /.env
-Disallow: /.git/
-Disallow: /node_modules/
 
 # Block specific bad bots
 User-agent: AhrefsBot
@@ -24,21 +18,6 @@ User-agent: MJ12bot
 Disallow: /
 
 User-agent: DotBot
-Disallow: /
-
-User-agent: OpenAI
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Google-Extended
 Disallow: /
 
 # Allow good bots
@@ -58,7 +37,7 @@ User-agent: Baiduspider
 Allow: /
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://inova-laundry.id/sitemap.xml
 
 # Crawl-delay to prevent server overload
 Crawl-delay: 10

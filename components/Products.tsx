@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { translations } from "@/lib/i18n";
-import { ArrowRight, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { waProduct } from "@/lib/whatsapp";
 
 interface ProductsProps {
   locale: "id" | "en";
@@ -13,34 +15,40 @@ export function Products({ locale }: ProductsProps) {
 
   const products = [
     {
-      id: "washing-machine",
-      title: locale === "id" ? "Mesin Cuci Industrial" : "Industrial Washing Machine",
-      description: locale === "id" ? "Mesin cuci kapasitas besar dengan teknologi hemat energi dan sistem pencucian optimal." : "High-capacity washing machines with energy-saving technology and optimal washing system.",
-      price: "Rp 8.500.000",
-      image: "https://images.unsplash.com/photo-1626806800700-5c4a0f2e80e6?w=600&h=400&fit=crop",
-      rating: 4.9,
-      reviews: 128,
+      id: "parfum",
+      title: locale === "id" ? "Parfum Laundry Inomatique" : "Inomatique Laundry Perfume",
+      description:
+        locale === "id" ? "Parfum laundry aroma premium — tersedia varian Akasia, Snappy, Selena. Membuat pakaian wangi tahan lama." : "Premium laundry perfume — available in Akasia, Snappy, Selena variants for long-lasting fresh clothes.",
+      price: "Rp 30.000",
+      priceNote: locale === "id" ? "per 1 Liter" : "per 1 Litre",
+      image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&h=400&fit=crop",
       tag: locale === "id" ? "Terlaris" : "Best Seller",
+      category: locale === "id" ? "Parfum & Softener" : "Perfume & Softener",
+      accent: "from-pink-400 to-rose-500",
     },
     {
-      id: "dryer",
-      title: locale === "id" ? "Mesin Pengering" : "Commercial Dryer",
-      description: locale === "id" ? "Mesin pengering efisien dengan berbagai kapasitas untuk hasil kering sempurna." : "Efficient dryers with various capacities for perfectly dried results.",
-      price: "Rp 6.000.000",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
-      rating: 4.8,
-      reviews: 96,
+      id: "setrika",
+      title: locale === "id" ? "Paket Setrika Uap + Boiler" : "Steam Iron + Boiler Package",
+      description:
+        locale === "id" ? "Boiler otomatis + kepala setrika + meja setrika 80×120 cm. Solusi setrika profesional untuk bisnis laundry." : "Auto boiler + iron head + 80×120 cm iron table. Professional ironing solution for laundry business.",
+      price: "Hubungi Kami",
+      priceNote: locale === "id" ? "harga sesuai paket" : "price by package",
+      image: "https://images.unsplash.com/photo-1558171813-f1f850c2fbf3?w=600&h=400&fit=crop",
       tag: null,
+      category: locale === "id" ? "Setrika & Boiler" : "Iron & Boiler",
+      accent: "from-orange-400 to-amber-500",
     },
     {
-      id: "ironing",
-      title: locale === "id" ? "Setrika Uap & Meja" : "Steam Ironing Station",
-      description: locale === "id" ? "Setrika uap profesional dengan meja setrika anti panas untuk hasil rapi." : "Professional steam ironing with heat-resistant table for crisp results.",
-      price: "Rp 2.500.000",
-      image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&h=400&fit=crop",
-      rating: 4.7,
-      reviews: 64,
+      id: "deterjen",
+      title: locale === "id" ? "Deterjen Cair Detoxy" : "Detoxy Liquid Detergent",
+      description:
+        locale === "id" ? "Deterjen laundry dilengkapi Oxy Bleach pencerah warna. Aman untuk semua bahan pakaian. Tersedia 5 Liter." : "Laundry detergent with Oxy Bleach color brightener. Safe for all fabric types. Available in 5 Litres.",
+      price: "Rp 47.500",
+      priceNote: locale === "id" ? "per 5 Liter" : "per 5 Litres",
+      image: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&h=400&fit=crop",
       tag: null,
+      category: locale === "id" ? "Deterjen & Kimia" : "Detergent & Chemical",
+      accent: "from-yellow-400 to-lime-500",
     },
   ];
 
@@ -69,12 +77,9 @@ export function Products({ locale }: ProductsProps) {
                 <img src={product.image} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
                 {product.tag && <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold tracking-wide uppercase shadow-lg">{product.tag}</span>}
+                {/* Category badge bottom-left */}
                 <div className="absolute bottom-4 left-4">
-                  <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                    <Star className="w-3.5 h-3.5 text-amber-400 fill-current" />
-                    <span className="text-xs font-black text-slate-800">{product.rating}</span>
-                    <span className="text-xs text-slate-400">({product.reviews})</span>
-                  </div>
+                  <span className={`px-2.5 py-1 rounded-full bg-linear-to-r ${product.accent} text-white text-[10px] font-bold uppercase tracking-wide shadow`}>{product.category}</span>
                 </div>
               </div>
 
@@ -85,11 +90,11 @@ export function Products({ locale }: ProductsProps) {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold mb-0.5">{t.products.startPrice}</p>
-                    <p className="text-xl font-black text-blue-700">{product.price}</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold mb-0.5">{product.priceNote}</p>
+                    <p className={`text-xl font-black ${product.price === "Hubungi Kami" ? "text-slate-600 text-base" : "text-blue-700"}`}>{product.price}</p>
                   </div>
                   <a
-                    href="https://wa.me/6281234567890"
+                    href={waProduct(product.title)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-md shadow-green-500/20 hover:shadow-green-500/30 hover:scale-[1.03] active:scale-100"
@@ -105,10 +110,10 @@ export function Products({ locale }: ProductsProps) {
 
         {/* View All */}
         <div className="text-center mt-10">
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-800 transition-colors group">
+          <Link href="/produk" className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-800 transition-colors group">
             {locale === "id" ? "Lihat Semua Produk" : "View All Products"}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

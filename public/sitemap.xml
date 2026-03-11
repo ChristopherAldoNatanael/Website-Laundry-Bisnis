@@ -2,35 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://laundryhub.id</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://inova-laundry.id</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="id" href="https://laundryhub.id/id"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://laundryhub.id/en"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://inova-laundry.id"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://inova-laundry.id?lang=en"/>
   </url>
   <url>
-    <loc>https://laundryhub.id/#products</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://inova-laundry.id/#packages</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://laundryhub.id/#packages</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://inova-laundry.id/#products</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inova-laundry.id/#why</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://laundryhub.id/#calculator</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://inova-laundry.id/#process</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://laundryhub.id/#faq</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://inova-laundry.id/#calculator</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inova-laundry.id/#faq</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://inova-laundry.id/paket</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inova-laundry.id/produk</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

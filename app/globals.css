@@ -221,10 +221,12 @@ button:focus-visible {
 
 /* GRADIENT TEXT */
 .gradient-text {
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background: linear-gradient(to right, #1c3ca6, #4f46e5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+  display: inline;
 }
 
 /* CARD HOVER */
